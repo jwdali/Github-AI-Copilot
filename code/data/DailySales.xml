@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Cards>
+	<Card>
+		<ID>101</ID>
+		<Family>LiL' Monsters</Family>
+		<Name>Mingle</Name>
+		<Slogan>Double Trouble</Slogan>
+		<Planet></Planet>
+		<BidPrice>15.95</BidPrice>
+		<PopularityIndex>890</PopularityIndex>
+		<UnitsSold>1</UnitsSold>
+		<TeamName>BlueShadows</TeamName>
+	</Card>
+	<Card>
+		<ID>102</ID>
+		<Family>LiL' Monsters</Family>
+		<Name>Yodel</Name>
+		<Slogan>Yodelay Hee Hoo!</Slogan>
+		<Planet></Planet>
+		<BidPrice>6.95</BidPrice>
+		<PopularityIndex>510</PopularityIndex>
+		<UnitsSold>2</UnitsSold>
+		<TeamName>Thunderheads</TeamName>
+	</Card>
+	<Card>
+		<ID>103</ID>
+		<Family>LiL' Monsters</Family>
+		<Name>Squido</Name>
+		<Slogan>An Eye for Design</Slogan>
+		<Planet></Planet>
+		<BidPrice>6.95</BidPrice>
+		<PopularityIndex>670</PopularityIndex>
+		<UnitsSold>1</UnitsSold>
+		<TeamName>SpookTones</TeamName>
+	</Card>
+	<Card>
+		<ID>104</ID>
+		<Family>LiL' Monsters</Family>
+		<Name>Spook</Name>
+		<Slogan>Safe and Sound</Slogan>
+		<Planet></Planet>
+		<BidPrice>23.95</BidPrice>
+		<PopularityIndex>520</PopularityIndex>
+		<UnitsSold>1</UnitsSold>
+		<TeamName>BlueShadows</TeamName>
+	</Card>
+	<Card>
+		<ID>201</ID>
+		<Family>Stargazers</Family>
+		<Name>Violette</Name>
+		<Slogan></Slogan>
+		<Planet>Amethystopia</Planet>
+		<BidPrice>8.95</BidPrice>
+		<PopularityIndex>188</PopularityIndex>
+		<UnitsSold>2</UnitsSold>
+		<TeamName>Helios</TeamName>
+	</Card>
+	<Card>
+		<ID>207</ID>
+		<Family>Stargazers</Family>
+		<Name>Trisaphron</Name>
+		<Slogan></Slogan>
+		<Planet>Hexapoda Minor</Planet>
+		<BidPrice>15.95</BidPrice>
+		<PopularityIndex>106</PopularityIndex>
+		<UnitsSold>3</UnitsSold>
+		<TeamName>Helios</TeamName>
+	</Card>
+	<Card>
+		<ID>203</ID>
+		<Family>Stargazers</Family>
+		<Name>Tomolor</Name>
+		<Slogan></Slogan>
+		<Planet>Krachonk</Planet>
+		<BidPrice>17.95</BidPrice>
+		<PopularityIndex>391</PopularityIndex>
+		<UnitsSold>2</UnitsSold>
+		<TeamName>SuperNovas</TeamName>
+	</Card>
+	<Card>
+		<ID>206</ID>
+		<Family>Stargazers</Family>
+		<Name>Narf the fourth</Name>
+		<Slogan></Slogan>
+		<Planet>Strogarus</Planet>
+		<BidPrice>15.95</BidPrice>
+		<PopularityIndex>602</PopularityIndex>
+		<UnitsSold>7</UnitsSold>
+		<TeamName>SuperNovas</TeamName>
+	</Card>
+</Cards>
