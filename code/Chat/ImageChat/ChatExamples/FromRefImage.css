@@ -1,0 +1,247 @@
+﻿:root {
+	--bg: #0c1120;
+	--card: rgba(255, 255, 255, 0.06);
+	--card-border: rgba(255, 255, 255, 0.10);
+	--muted: #8fa1b3;
+	--text: #e6eef8;
+	--brand-1: #0a2a47;
+	--brand-2: #0e3b66;
+	--brand-3: #124a83;
+	--accent: #9fd1ff;
+	--danger: #ff6b6b;
+	--radius: 12px;
+	--radius-sm: 10px;
+	--shadow-1: 0 10px 30px rgba(0, 0, 0, 0.45);
+	--inset: inset 0 1px 0 rgba(255, 255, 255, 0.06), inset 0 0 0 1px var(--card-border);
+	--focus: 0 0 0 3px rgba(159, 209, 255, 0.35);
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: "Cascadia Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+	color: var(--text);
+	background: radial-gradient(600px 400px at 8% 0%, rgba(15, 56, 104, 0.65), transparent 60%), radial-gradient(500px 500px at 102% 100%, rgba(20, 80, 150, 0.55), transparent 55%), radial-gradient(400px 380px at 0% 90%, rgba(18, 45, 90, 0.6), transparent 60%), linear-gradient(180deg, #0b132b 0%, #0a0f1d 100%);
+}
+
+/* Layout */
+.login-wrap {
+	min-height: calc(100vh - 2rem);
+	padding: 3rem 1.25rem;
+	display: grid;
+	grid-template-columns: 1fr 520px;
+	gap: 0;
+	align-items: center;
+}
+
+@media (max-width: 1024px) {
+	.login-wrap {
+		grid-template-columns: 1fr;
+		row-gap: 3rem;
+	}
+
+	.visual {
+		order: -1;
+		justify-self: center;
+	}
+}
+
+/* Card */
+.login-card {
+	max-width: 560px;
+	width: 100%;
+	padding: 2.5rem 2rem 2rem;
+	background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+	border-radius: var(--radius);
+	box-shadow: var(--shadow-1), var(--inset);
+	backdrop-filter: blur(8px);
+	border: 1px solid var(--card-border);
+}
+
+.login-title {
+	margin: 0 0 1.5rem 0;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	font-size: clamp(28px, 5vw, 48px);
+	color: var(--text);
+}
+
+/* Form */
+.login-form {
+	display: grid;
+	gap: 1rem;
+}
+
+.input-field {
+	height: 56px;
+	padding: 0 1rem 0 3rem;
+	border-radius: var(--radius-sm);
+	border: 1px solid var(--card-border);
+	background: linear-gradient(180deg, rgba(14, 18, 34, 0.9), rgba(14, 18, 34, 0.75));
+	color: var(--text);
+	outline: none;
+	box-shadow: var(--inset);
+	transition: box-shadow 160ms ease, border-color 160ms ease, background 160ms ease;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+	.input-field::placeholder {
+		color: #9aa8ba;
+		opacity: 0.9;
+	}
+
+	.input-field:focus {
+		border-color: rgba(159, 209, 255, 0.55);
+		box-shadow: var(--inset), var(--focus);
+	}
+
+/* Left icons on inputs via inline SVG data URIs */
+.input-username {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%239aa8ba' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='12' cy='7' r='4'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: 10px 50%;
+	background-size: 18px;
+}
+
+.input-password {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%239aa8ba' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='11' width='18' height='10' rx='2'/%3E%3Cpath d='M7 11V7a5 5 0 0 1 10 0v4'/%3E%3Cpath d='M12 16v2'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: 10px 50%;
+	background-size: 18px;
+}
+
+/* Submit */
+.btn-submit {
+	height: 56px;
+	border: 0;
+	border-radius: var(--radius-sm);
+	background-image: linear-gradient(180deg, var(--brand-2), var(--brand-1));
+	color: #eaf4ff;
+	font-weight: 700;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	cursor: pointer;
+	box-shadow: 0 6px 20px rgba(10, 42, 71, 0.35), inset 0 1px 0 rgba(255,255,255,0.06);
+	transition: transform 120ms ease, box-shadow 120ms ease, filter 120ms ease;
+}
+
+	.btn-submit:hover {
+		filter: brightness(1.05);
+		box-shadow: 0 10px 26px rgba(10, 42, 71, 0.45), inset 0 1px 0 rgba(255,255,255,0.07);
+	}
+
+	.btn-submit:active {
+		transform: translateY(1px);
+	}
+
+/* Links */
+.login-links {
+	margin-top: 0.5rem;
+	display: flex;
+	gap: 1.5rem;
+	align-items: center;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
+
+	.login-links .spacer {
+		width: 2rem;
+		height: 1px;
+		background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+	}
+
+.link {
+	color: var(--text);
+	text-decoration: none;
+	opacity: 0.9;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	transition: opacity 120ms ease, color 120ms ease;
+}
+
+	.link:hover {
+		color: var(--accent);
+		opacity: 1;
+	}
+
+/* Right-side visual column */
+.visual {
+	position: relative;
+	height: 100%;
+	min-height: 520px;
+	display: grid;
+	align-items: center;
+	justify-items: center;
+	overflow: hidden;
+}
+
+	.visual::before,
+	.visual::after {
+		/* Decorative blurred blobs to match the layout vibes */
+		content: "";
+		position: absolute;
+		filter: blur(40px);
+		border-radius: 50%;
+		pointer-events: none;
+	}
+
+	.visual::before {
+		width: 360px;
+		height: 360px;
+		background: radial-gradient(circle at 30% 30%, #0f3868 0%, rgba(15,56,104,0.0) 70%);
+		top: -60px;
+		left: -60px;
+		opacity: 0.9;
+	}
+
+	.visual::after {
+		width: 420px;
+		height: 420px;
+		background: radial-gradient(circle at 70% 70%, #0f3868 0%, rgba(15,56,104,0.0) 70%);
+		bottom: -80px;
+		right: -80px;
+		opacity: 0.9;
+	}
+
+.hero {
+	width: min(520px, 88%);
+	height: auto;
+	z-index: 1;
+	filter: drop-shadow(0 20px 32px rgba(0, 0, 0, 0.45));
+	user-select: none;
+}
+
+.hero-glow {
+	position: absolute;
+	inset: 20% 10% auto auto;
+	width: 55%;
+	height: 40%;
+	z-index: 0;
+	background: radial-gradient(60% 60% at 40% 40%, rgba(255, 220, 160, 0.40), transparent 70%), radial-gradient(50% 50% at 70% 60%, rgba(255, 190, 120, 0.25), transparent 70%);
+	filter: blur(22px);
+	transform: translateY(20px);
+	pointer-events: none;
+	opacity: 0.9;
+}
+
+/* Accessibility helpers */
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+}
