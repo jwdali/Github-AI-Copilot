@@ -1,5 +1,5 @@
 ﻿namespace SimpleConsole {
-	internal class ShowIntellicode {
+	internal class ShowWeather {
 
 		public static async Task<string> GetWeather() {
 			// Free weather API (no key required)
