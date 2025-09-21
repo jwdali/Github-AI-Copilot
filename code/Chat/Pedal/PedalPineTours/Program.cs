@@ -7,7 +7,7 @@ namespace RazorSimple {
 
 			// Add services to the container.
 			builder.Services.AddRazorPages();
-			
+
 			// Register repositories
 			builder.Services.AddSingleton<TourRepository>();
 			builder.Services.AddSingleton<CustomerRepository>();
@@ -23,7 +23,7 @@ namespace RazorSimple {
 				//app.UseHsts();
 			}
 
-		
+
 			app.UseStaticFiles();
 
 			app.UseRouting();
