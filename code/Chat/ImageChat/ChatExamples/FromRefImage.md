@@ -1,4 +1,6 @@
-﻿Based on the login form image you've provided, I'll create HTML and CSS that recreates this design. The image shows a modern login interface with a dark gradient background, an illustrated character, and clean form elements.
+﻿Generate HTML and CSS based on this image. Do not use any resources, css or html from this solution.
+
+Based on the login form image you've provided, I'll create HTML and CSS that recreates this design. The image shows a modern login interface with a dark gradient background, an illustrated character, and clean form elements.
 
 ```html
 <!DOCTYPE html>

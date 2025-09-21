@@ -1,4 +1,6 @@
-﻿Here’s a clean, copy-pasteable login form with minimal boilerplate. 
+﻿Generate HTML and CSS for a login form with username, password, and submit button.  Do not use any resources, css or html from this solution.
+
+Here’s a clean, copy-pasteable login form with minimal boilerplate. 
 HTML
 
 ```html
