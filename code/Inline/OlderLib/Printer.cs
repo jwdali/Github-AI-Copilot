@@ -10,20 +10,20 @@ namespace OlderLib {
 			PrinterName = String.Empty;
 		}
 		public string PrinterName { get; set; }
-
+		// The color printer can print.
+		// But it doesn't have copy or scan capabilities.
+		public void PrintDoc() {
+		Console.WriteLine("Color printer printing document...");
+		}
+		// Color printer does not scan, so this 
+		// method is irrelevant .
+		public void ScanDoc() {
+			throw new NotImplementedException();
+		}
 		public void CopyDoc() {
 			throw new NotImplementedException();
 		}
 
-		public void PrintDoc() {
-			throw new NotImplementedException();
-		}
-
-		// Color printer does not scan, so this 
-		// method is irrelevant 
-		public void ScanDoc() {
-			throw new NotImplementedException();
-		}
 
 	}
 
