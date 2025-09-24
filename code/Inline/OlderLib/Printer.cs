@@ -11,6 +11,10 @@ namespace OlderLib {
 		}
 		public string PrinterName { get; set; }
 
+		public void CopyDoc() {
+			throw new NotImplementedException();
+		}
+
 		public void PrintDoc() {
 			throw new NotImplementedException();
 		}
@@ -31,6 +35,7 @@ namespace OlderLib {
 		public string PrinterName { get; set; }
 		public void PrintDoc();
 		public void ScanDoc();
-		// there could be additional methods (Copy, Fax etc.)
+		public void CopyDoc();
+		
 	}
 }
