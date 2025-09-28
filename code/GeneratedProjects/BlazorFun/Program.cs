@@ -1,6 +1,6 @@
-using BlazerFun.Components;
+using BlazorFun.Components;
 
-namespace BlazerFun
+namespace BlazorFun
 {
     public class Program
     {
