@@ -1,0 +1,158 @@
+﻿@page "/"
+@inject IJSRuntime JSRuntime
+@implements IAsyncDisposable
+@rendermode InteractiveServer
+
+<PageTitle>Kaleidoscope Generator</PageTitle>
+
+<div class="kaleidoscope-container">
+    <h1 class="text-center mb-4">🔮 Kaleidoscope Generator</h1>
+    
+    <div class="canvas-wrapper">
+        <canvas id="kaleidoscopeCanvas" class="kaleidoscope-canvas" width="400" height="400"></canvas>
+        
+        @if (isGenerating)
+        {
+            <div class="loading-overlay">
+                <div class="spinner-border text-light" role="status">
+                    <span class="visually-hidden">Generating...</span>
+                </div>
+            </div>
+        }
+    </div>
+    
+    <div class="text-center mt-3">
+        <button class="btn btn-primary btn-lg" @onclick="GeneratePattern" disabled="@isGenerating">
+            @if (isGenerating)
+            {
+                <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+                <text>Generating...</text>
+            }
+            else
+            {
+                <text>🎨 Generate New Pattern</text>
+            }
+        </button>
+    </div>
+    
+    <div class="text-center mt-3">
+        <p class="text-muted">
+            Click the button above to generate a new kaleidoscope pattern!<br/>
+            <small>Each pattern is unique with vibrant colors and geometric shapes.</small>
+        </p>
+    </div>
+</div>
+
+@code {
+    private bool isGenerating = false;
+    private bool isInitialized = false;
+    private readonly CancellationTokenSource _cancellationTokenSource = new();
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender && !isInitialized)
+        {
+            await InitializeKaleidoscope();
+        }
+    }
+
+    private async Task InitializeKaleidoscope()
+    {
+        if (isInitialized) return;
+        
+        try
+        {
+            isGenerating = true;
+            StateHasChanged();
+
+            // Wait for Blazor Server connection to stabilize
+            await Task.Delay(1000, _cancellationTokenSource.Token);
+
+            // Initialize with retry logic
+            var success = false;
+            var attempts = 0;
+            const int maxAttempts = 3;
+
+            while (!success && attempts < maxAttempts && !_cancellationTokenSource.Token.IsCancellationRequested)
+            {
+                attempts++;
+                try
+                {
+                    success = await JSRuntime.InvokeAsync<bool>("initializeKaleidoscope", 
+                        _cancellationTokenSource.Token, "kaleidoscopeCanvas", 400, 400);
+                    
+                    if (!success && attempts < maxAttempts)
+                    {
+                        await Task.Delay(500, _cancellationTokenSource.Token);
+                    }
+                }
+                catch (Exception ex) when (attempts < maxAttempts)
+                {
+                    Console.WriteLine($"Initialization attempt {attempts} failed: {ex.Message}");
+                    await Task.Delay(500, _cancellationTokenSource.Token);
+                }
+            }
+
+            isInitialized = success;
+            if (!success)
+            {
+                Console.WriteLine("Failed to initialize kaleidoscope after all attempts");
+            }
+        }
+        catch (OperationCanceledException)
+        {
+            // Component disposed, ignore
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error initializing kaleidoscope: {ex.Message}");
+        }
+        finally
+        {
+            isGenerating = false;
+            StateHasChanged();
+        }
+    }
+
+    private async Task GeneratePattern()
+    {
+        if (!isInitialized || isGenerating) return;
+
+        try
+        {
+            isGenerating = true;
+            StateHasChanged();
+
+            // Brief delay for UI feedback
+            await Task.Delay(50, _cancellationTokenSource.Token);
+
+            var success = await JSRuntime.InvokeAsync<bool>("regenerateKaleidoscope", 
+                _cancellationTokenSource.Token);
+
+            if (!success)
+            {
+                Console.WriteLine("Pattern generation failed");
+            }
+        }
+        catch (OperationCanceledException)
+        {
+            // Component disposed, ignore
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error generating pattern: {ex.Message}");
+        }
+        finally
+        {
+            isGenerating = false;
+            StateHasChanged();
+        }
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        _cancellationTokenSource.Cancel();
+        _cancellationTokenSource.Dispose();
+        await Task.CompletedTask;
+    }
+}

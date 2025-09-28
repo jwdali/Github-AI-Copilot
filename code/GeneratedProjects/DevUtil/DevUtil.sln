@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevUtil", "DevUtil\DevUtil.csproj", "{016966CB-EF5B-F0DE-9C04-06057028C3A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortChecker", "PortChecker\PortChecker.csproj", "{53D5DDDA-7660-FE0B-692F-BAE6F0C4EF1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortLib", "PortLib\PortLib.csproj", "{A2FE162F-9184-889B-3BC9-5CFCE793B9E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{016966CB-EF5B-F0DE-9C04-06057028C3A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{016966CB-EF5B-F0DE-9C04-06057028C3A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{016966CB-EF5B-F0DE-9C04-06057028C3A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{016966CB-EF5B-F0DE-9C04-06057028C3A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53D5DDDA-7660-FE0B-692F-BAE6F0C4EF1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53D5DDDA-7660-FE0B-692F-BAE6F0C4EF1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53D5DDDA-7660-FE0B-692F-BAE6F0C4EF1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53D5DDDA-7660-FE0B-692F-BAE6F0C4EF1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2FE162F-9184-889B-3BC9-5CFCE793B9E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2FE162F-9184-889B-3BC9-5CFCE793B9E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2FE162F-9184-889B-3BC9-5CFCE793B9E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2FE162F-9184-889B-3BC9-5CFCE793B9E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E030CAA4-6770-48B0-B497-B4CE18DDEA3C}
+	EndGlobalSection
+EndGlobal
