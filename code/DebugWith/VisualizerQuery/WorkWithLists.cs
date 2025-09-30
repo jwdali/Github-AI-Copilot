@@ -9,25 +9,24 @@ using System.Threading.Tasks;
 namespace VisualizerQuery {
 	internal class WorkWithLists {
 
-		public IEnumerable<WebColor> GetSat() { 
+		public IEnumerable<dynamic> GetGreenColors() {
 			var colors = ColorSource.WebColors;
-
-		var reds = colors.Where(x => x.HSL.Saturation < 16);
-			return reds.ToList();
-		}
-
-		public IEnumerable<WebColor> GetGreenColors() {
-			var colors = ColorSource.WebColors;
-			var q = colors
+			var greens = colors
 				.Where(color=>color.ColorFamily== ColorFamily.Green)
 				.Where(color => color.GreenPercent > .5)
 				.OrderBy(color => color.ColorName)
-				.Select(color => color)
-				;
+				.Select(color=>new { ColorName = color.ColorName, 
+														 GreenPercent = color.GreenPercent});
 
-			return q.ToList();
+			return greens.ToList();
 		}
-		//.Select(color => new { ColorName = color.ColorName, GreenPercent = color.GreenPercent })
+
+		public IEnumerable<WebColor> GetLowSaturationColors() {
+			var colors = ColorSource.WebColors;
+
+			var lowSats = colors.Where(x => x.HSL.Saturation < 16);
+			return lowSats.ToList();
+		}
 
 	}
 }

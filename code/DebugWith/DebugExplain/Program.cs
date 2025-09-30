@@ -39,16 +39,13 @@ namespace DebugExplain {
 			}
 		}
 		public static void AnalyzeChain() {
-			// 5.2
+			//
 			// Longer chain of state change calls.
 			var point = new RayPoint(5, 10, 15);
-			Console.WriteLine($"Initial RayPoint: {point.X}, {point.Y}, {point.Z}");
 
-			Panner.Pan(point, 7); // X = 12
-			Console.WriteLine($"After XModifierA: {point.X}, {point.Y}, {point.Z}");
-
-			Zoomer.Zoom(point, 3); // X = 36
-			Console.WriteLine($"After XModifierB: {point.X}, {point.Y}, {point.Z}");
+			Panner.Pan(point, 7); 
+			Zoomer.Zoom(point, 3); 
+			
 
 			if (Debugger.IsAttached)
 			{

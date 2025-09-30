@@ -13,7 +13,7 @@ namespace DebugExplain {
 		public void Offset(double value) {
 			X += value;
 			Y += value;
-			Z += 20;
+			Z += value;
 		}
 	}
 }

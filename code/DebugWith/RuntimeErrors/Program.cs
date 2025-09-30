@@ -7,16 +7,11 @@ namespace RuntimeErrors {
 
 			ShowMenu();
 			// TryCalculator();
-			//TryDataProcess();
+			// TryDataProcess();
 
 
 		}
-		internal static void TryCalculator() {
-			System.Console.WriteLine("Runtime scenario: divide by input");
-			var result = Calculator.Divide(10, 0); // runtime error when denominator is zero
-			System.Console.WriteLine($"Result: {result}");
-
-		}
+		
 
 		internal static void ShowMenu() {
 			Console.WriteLine("Book List Exception Scenario:");
@@ -53,7 +48,12 @@ namespace RuntimeErrors {
 			Console.WriteLine($"  Book: {selectedBook.BookTitle}, Price: {selectedBook.Price:C}");
 			Console.ResetColor();
 		}
+		internal static void TryCalculator() {
+			System.Console.WriteLine("Runtime scenario: divide by input");
+			var result = Calculator.Divide(10, 0); // runtime error when denominator is zero
+			System.Console.WriteLine($"Result: {result}");
 
+		}
 		internal static void TryDataProcess() {
 			Console.WriteLine("Exception scenario: process data");
 			var processor = new DataProcessor();
