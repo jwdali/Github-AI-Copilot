@@ -9,6 +9,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortChecker", "PortChecker\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortLib", "PortLib\PortLib.csproj", "{A2FE162F-9184-889B-3BC9-5CFCE793B9E1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Screenshots", "Screenshots", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Agent\Agent Chat Archive\Chat-DevUtil-First.png = ..\..\Agent\Agent Chat Archive\Chat-DevUtil-First.png
+		..\..\Agent\Agent Chat Archive\Chat-DevUtil-WhatApp.png = ..\..\Agent\Agent Chat Archive\Chat-DevUtil-WhatApp.png
+		..\..\Agent\Agent Chat Archive\Chat-PortCheck-AddIsPortFree.png = ..\..\Agent\Agent Chat Archive\Chat-PortCheck-AddIsPortFree.png
+		..\..\Agent\Agent Chat Archive\Chat-PortChecker-CheckTab.png = ..\..\Agent\Agent Chat Archive\Chat-PortChecker-CheckTab.png
+		..\..\Agent\Agent Chat Archive\Chat-PortChecker-ListTab.png = ..\..\Agent\Agent Chat Archive\Chat-PortChecker-ListTab.png
+		..\..\Agent\Agent Chat Archive\Chat-PortLib-AddIsPortFree.png = ..\..\Agent\Agent Chat Archive\Chat-PortLib-AddIsPortFree.png
+		..\..\Agent\Agent Chat Archive\Chat-PortLib-RefactorTo.png = ..\..\Agent\Agent Chat Archive\Chat-PortLib-RefactorTo.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
